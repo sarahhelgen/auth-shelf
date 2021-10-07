@@ -3,9 +3,11 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 function* fetchItems() {
     try {
-
-    } catch {
-
+        const response = axios.get('/api/item');
+        yield put({ type: 'SET_ITEMS', payload: response.data});
+    } catch (error) {
+        console.log('Error in GET all items - ', error);
+        alert('Something went wrong!');
     }
 }
 
