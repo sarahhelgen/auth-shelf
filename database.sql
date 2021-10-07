@@ -16,3 +16,9 @@ CREATE TABLE "item" (
     "user_id" INT REFERENCES "user"
 );
 
+-- Placeholder data with no user attached. This only adds description and placeholder url text.
+INSERT INTO "item" ("description", "image_url")
+VALUES ('A doll of our mascot and CEO, Mark.', 'Image Text Placeholder'),
+('Boardgames featuring popular pop culture characters', 'Image Text'),
+('Lots and lots of monitors. Should these be moved?','Image Placeholder Text')
+
