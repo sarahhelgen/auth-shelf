@@ -1,22 +1,10 @@
-import { useEffect } from "react";
-import useReduxStore from '../../hooks/useReduxStore';
-
-function ItemList() {
-    const dispatch = useDispatch();
-    const store = useReduxStore();
-    
-    useEffect(() => {
-        dispatch({ type: 'FETCH_ITEMS' });
-    }, []);
+function ItemList({ item }) {
 
     return(
-        <>
-        {store.items.map((item) => (
-            <div key={item.id}>
-                <p>{item.description}</p>
-                <p>{item.image_url}</p>
-            </div>
-        ))}
+        <> 
+            <td id="delete-item">X</td>
+            <td>{item.description}</td>
+            <td>{item.image_url}</td>
         </>
     )
 }

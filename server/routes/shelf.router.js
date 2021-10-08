@@ -7,12 +7,14 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
  * Get all of the items on the shelf
  */
 router.get('/', rejectUnauthenticated, (req, res) => {
-  console.log(req.body);
+  console.log(req.user);
   const sqlText = `SELECT * FROM "item";`;
+
   pool.query(sqlText)
-  .then((result) => {
-    res.send(result.rows);
-  }).catch((error) => {
+  .then((result) => { 
+    res.send(result.rows)
+  })
+  .catch((error) => {
     console.log('Error in GET all items - ', error);
     res.sendStatus(500);
   })

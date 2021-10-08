@@ -110,3 +110,30 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+/* --------------------------------------------------------------------------------
+Items Table
+-------------------------------------------------------------------------------- */
+
+#items-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#items-table td, #items-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#items-table tr:nth-child(even){background-color: #f2f2f2;}
+
+#items-table tr:hover {background-color: #ddd;}
+
+#items-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #008183;
+  color: white;
+}
